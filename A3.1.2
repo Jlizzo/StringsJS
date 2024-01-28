@@ -1,0 +1,55 @@
+
+
+//'myFunction1' triggers alert message to let the user now what a palindrome is
+function myFunction1() {
+    //'const' calls to button1 
+    const eventChecker = document.getElementById('b1');
+    //'eventChecker.' makes the button perform the alert function when clicked
+    eventChecker.addEventListener('click', myFunction1);
+    alert ("Pal-in-drome: a word, phrase, or sequence that reads the same backward as forward, e.g., 'madam', '3_49*94_3' or 'nurses run'");
+}
+
+//'myFunction3' triggers a the looping function that checks if the user input is a palindrome
+function validatePal() {
+
+    //'str' grabs input from user and brings it into the 'validatePal()' function
+    const str = document.getElementById('name').value.toLowerCase();
+    
+    //'i' (1st part of loop) = starts at the 1st character of the user-entered string
+    let i = 0;
+
+    //'j' (2nd part of loop) = starts at the last character of the user-entered string
+    let j = str.length - 1;
+
+    //while position 'i' continues to be less than position 'j', the loop will continue
+    while(i < j) {
+
+        //if the character in position 'i' is the same as the character in positon 'j' = true, and
+        //the loop continues to the next characters, moving toward the middle of the string
+        if(str[i] == str[j]) {
+
+            //'i++' moves to the right 1 position in the string
+            i++; 
+
+            //'j--' moves to the left 1 position in the string
+            j--;
+            
+            //This message displays if user input is a palindrome
+            return alert("This is a palindrome!") ;
+            
+        //if any part of the above function are false, the loop stops
+        }else {
+            //This message displays if user input is not a palindrome
+            return alert("Nope! Not a palindrome. Try again.");
+          
+        }
+    }
+    
+}
+        
+
+
+
+
+
+
